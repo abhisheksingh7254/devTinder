@@ -1,12 +1,17 @@
 const express =require("express");
 const app=express();
 
-app.use("/about",(req,res)=>{
-    res.send("This is about")
+
+//this is get call,we will use specific http method same from now,not app.use
+app.get("/contact",(req,res)=>{
+    res.send("This is a get request for contact")
+})
+//This will respond speificaly to post request,also take oder in measure for omplete the post request,if app.use is above this,it wont work
+app.post("/contact",(req,res)=>{
+    res.send("This is a post to contact")
 });
-app.use("/contact",(req,res)=>{
-    res.send("This is contact")
-});
+
+//this will respond to all the HTTP method call.
 app.use("/",(req,res)=>{
     res.send("This is server")
 });
