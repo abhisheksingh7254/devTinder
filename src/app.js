@@ -11,6 +11,10 @@ app.post("/contact",(req,res)=>{
     res.send("This is a post to contact")
 });
 
+app.delete("/contact",(req,res)=>{
+    res.send("Data is deleted successfully");
+});
+
 //this will respond to all the HTTP method call.
 app.use("/",(req,res)=>{
     res.send("This is server")
